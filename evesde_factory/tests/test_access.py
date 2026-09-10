@@ -4,6 +4,8 @@
 from http import HTTPStatus
 
 # Django
+from django.conf import settings
+from django.shortcuts import resolve_url
 from django.urls import reverse
 
 # AA EVE SDE Factory
@@ -45,4 +47,5 @@ class TestViews(ExampleTestCase):
         response = views.index(request)
         # then
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
+        self.assertTrue(response.url.startswith(resolve_url(settings.LOGIN_URL)))
         self.assertIn("next=", response.url)

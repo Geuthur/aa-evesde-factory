@@ -14,7 +14,7 @@ api = NinjaAPI(
     version="0.5.0",
     urls_namespace="evesde_factory:api",
     auth=django_auth,
-    openapi_url=settings.DEBUG and "/openapi.json" or "",
+    openapi_url=settings.DEBUG and "/evesde_factory/openapi.json" or "",
 )
 
 
