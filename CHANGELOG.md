@@ -79,7 +79,7 @@ Section Order:
 
 ### Fixed
 
-- Template Path (`template` to `example`)
+- Template Path (`template` to `evesde_factory`)
 
 ### Removed
 
@@ -89,7 +89,7 @@ Section Order:
 
 ### Changed
 
-- Refactor aa-example
+- Refactor aa-evesde-factory
 
 ## [0.0.2] - 2025-02-06
 
@@ -112,8 +112,8 @@ Section Order:
 
 <!-- Links -->
 
-[0.0.2]: https://github.com/Geuthur/aa-example/compare/v0.0.1...v0.0.2 "0.0.2"
-[0.0.3]: https://github.com/Geuthur/aa-example/compare/v0.0.2...v0.0.3 "0.0.3"
-[0.0.4]: https://github.com/Geuthur/aa-example/compare/v0.0.3...v0.0.4 "0.0.4"
-[1.0.0]: https://github.com/Geuthur/aa-example/compare/v0.0.4...v1.0.0 "v1.0.0"
-[in development]: https://github.com/Geuthur/aa-example/compare/v1.0.0...HEAD "In Development"
+[0.0.2]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.1...v0.0.2 "0.0.2"
+[0.0.3]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.2...v0.0.3 "0.0.3"
+[0.0.4]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.3...v0.0.4 "0.0.4"
+[1.0.0]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.4...v1.0.0 "v1.0.0"
+[in development]: https://github.com/Geuthur/aa-evesde-factory/compare/v1.0.0...HEAD "In Development"

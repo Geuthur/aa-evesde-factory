@@ -5,7 +5,7 @@ requires = [
 ]
 
 [project]
-name = "aa-example"
+name = "aa-evesde-factory"
 description = "Here is your description"
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -43,16 +43,16 @@ optional-dependencies.tests-allianceauth-latest = [
     "factory-boy",
     "pook",
 ]
-urls.Changelog = "https://github.com/Geuthur/aa-example/blob/master/CHANGELOG.md"
+urls.Changelog = "https://github.com/Geuthur/aa-evesde-factory/blob/master/CHANGELOG.md"
 urls.Discord = "https://discord.gg/WrHzA4rnxA"
-urls.Documentation = "https://github.com/Geuthur/aa-example/blob/master/README.md"
+urls.Documentation = "https://github.com/Geuthur/aa-evesde-factory/blob/master/README.md"
 urls.Donations = "https://ko-fi.com/Geuthur"
-urls.Homepage = "https://github.com/Geuthur/aa-example"
-urls.Source = "https://github.com/Geuthur/aa-example"
-urls.Tracker = "https://github.com/Geuthur/aa-example/issues"
+urls.Homepage = "https://github.com/Geuthur/aa-evesde-factory"
+urls.Source = "https://github.com/Geuthur/aa-evesde-factory"
+urls.Tracker = "https://github.com/Geuthur/aa-evesde-factory/issues"
 
 [tool.hatch]
-version.path = "example/__init__.py"
+version.path = "evesde_factory/__init__.py"
 build.include = [
-    "/example",
+    "/evesde_factory",
 ]

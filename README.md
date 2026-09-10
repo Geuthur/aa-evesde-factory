@@ -1,15 +1,15 @@
-# AA Example.<a name="aa-example"></a>
+# AA EVE SDE Factory.<a name="aa-evesde-factory"></a>
 
 > [!WARNING]
 > Before you create Models, etc remove the 0001_initial.py from migrations folder if you dont have created own one.
 
-A Example App that templating example to example
+A Example App that templating evesde_factory to evesde_factory
 
 ______________________________________________________________________
 
 <!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=1 -->
 
-- [AA Example.](#aa-example)
+- [AA EVE SDE Factory.](#aa-evesde-factory)
   - [Features](#features)
   - [Upcoming](#upcoming)
   - [Installation](#installation)
@@ -38,7 +38,7 @@ ______________________________________________________________________
 ## Installation<a name="installation"></a>
 
 > [!NOTE]
-> AA Example needs at least Alliance Auth v5
+> AA EVE SDE Factory needs at least Alliance Auth v5
 > Please make sure to update your Alliance Auth before you install this APP
 
 ### Step 1 - Install the Package<a name="step-1---install-the-package"></a>
@@ -46,7 +46,7 @@ ______________________________________________________________________
 Make sure you're in your virtual environment (venv) of your Alliance Auth then install the pakage.
 
 ```shell
-pip install aa-example
+pip install aa-evesde-factory
 ```
 
 ### Step 2 - Configure Alliance Auth<a name="step-2---configure-alliance-auth"></a>
@@ -57,7 +57,7 @@ Configure your Alliance Auth settings (`local.py`) as follows:
 INSTALLED_APPS = [
     # other apps
     "eve_sde",  # only if it not already existing
-    "example",
+    "evesde_factory",
     # other apps?
 ]
 
@@ -70,9 +70,9 @@ INSTALLED_APPS = ["modeltranslation"] + INSTALLED_APPS
 To set up the Scheduled Tasks add following code to your `local.py`
 
 ```python
-if "example" in INSTALLED_APPS:
-    CELERYBEAT_SCHEDULE["AA Example :: Test Task"] = {
-        "task": "example.tasks.example_task",
+if "evesde_factory" in INSTALLED_APPS:
+    CELERYBEAT_SCHEDULE["AA EVE SDE Factory :: Test Task"] = {
+        "task": "evesde_factory.tasks.example_task",
         "schedule": crontab(minute=0, hour="*/1"),
     }
 ```
@@ -86,12 +86,12 @@ Ensure that you have writing permission in logs folder.
 LOGGING["handlers"]["example_file"] = {
     "level": "INFO",
     "class": "logging.handlers.RotatingFileHandler",
-    "filename": os.path.join(BASE_DIR, "log/example.log"),
+    "filename": os.path.join(BASE_DIR, "log/evesde_factory.log"),
     "formatter": "verbose",
     "maxBytes": 1024 * 1024 * 5,
     "backupCount": 5,
 }
-LOGGING["loggers"]["extensions.example"] = {
+LOGGING["loggers"]["extensions.evesde_factory"] = {
     "handlers": ["example_file"],
     "level": "DEBUG",
 }
@@ -111,7 +111,7 @@ python manage.py esde_load_sde
 Migrate the app and collect static.
 
 ```shell
-python manage.py migrate example
+python manage.py migrate evesde_factory
 python manage.py collectstatic --noinput
 ```
 
@@ -135,7 +135,7 @@ If you set up EXAMPLE_LOGGER_USE to `True` you need to add the following code be
 
 ## Translations<a name="translations"></a>
 
-[![Translations](https://weblate.geuthur.de/widget/allianceauth/aa-example/multi-auto.svg)](https://weblate.geuthur.de/engage/allianceauth/)
+[![Translations](https://weblate.geuthur.de/widget/allianceauth/aa-evesde-factory/multi-auto.svg)](https://weblate.geuthur.de/engage/allianceauth/)
 
 Help us translate this app into your language or improve existing translations. Join our team!"
 
@@ -146,4 +146,4 @@ Please ensure you read the [Contribution Guidelines]
 
 <!-- MD Links -->
 
-[contribution guidelines]: https://github.com/Geuthur/aa-example/blob/master/CONTRIBUTING.md "Contribution Guidelines"
+[contribution guidelines]: https://github.com/Geuthur/aa-evesde-factory/blob/master/CONTRIBUTING.md "Contribution Guidelines"
