@@ -22,17 +22,17 @@ msgid "Permission Denied."
 msgstr ""
 
 #: evesde_factory/models/general.py:13
-msgid "Can access this app, Example"
+msgid "Can access this app, AA EVE SDE Factory"
 msgstr ""
 
 #: evesde_factory/models/general.py:14
-msgid "Can manage Example"
+msgid "Can manage AA EVE SDE Factory"
 msgstr ""
 
 #: evesde_factory/templates/evesde_factory/base.html:5 evesde_factory/templates/evesde_factory/base.html:9
 #: evesde_factory/templates/evesde_factory/partials/navigation/navigation.html:5
 #: evesde_factory/templates/evesde_factory/view-index.html:17
-msgid "Example"
+msgid "AA EVE SDE Factory"
 msgstr ""
 
 #: evesde_factory/templates/evesde_factory/base.html:64
@@ -40,5 +40,5 @@ msgid "Internal Server Error"
 msgstr ""
 
 #: evesde_factory/templates/evesde_factory/view-index.html:25
-msgid "Welcome to Example."
+msgid "Welcome to AA EVE SDE Factory."
 msgstr ""

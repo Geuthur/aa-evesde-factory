@@ -10,7 +10,7 @@ from evesde_factory import __title__
 from evesde_factory.api import character
 
 api = NinjaAPI(
-    title="Example API",
+    title=f"{__title__} API",
     version="0.5.0",
     urls_namespace="evesde_factory:api",
     auth=django_auth,

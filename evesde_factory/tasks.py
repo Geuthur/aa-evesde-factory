@@ -17,7 +17,7 @@ MAX_RETRIES_DEFAULT = 3
 
 # Default params for all tasks.
 TASK_DEFAULTS = {
-    "time_limit": app_settings.EXAMPLE_TASKS_TIME_LIMIT,
+    "time_limit": app_settings.EVESDE_FACTORY_TASKS_TIME_LIMIT,
     "max_retries": MAX_RETRIES_DEFAULT,
 }
 

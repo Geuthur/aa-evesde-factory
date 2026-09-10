@@ -10,7 +10,7 @@ class General(models.Model):
         abstract = True  # Please Remove this to activate this model
         managed = False
         permissions = (
-            ("basic_access", _("Can access this app, Example")),
-            ("manage_access", _("Can manage Example")),
+            ("basic_access", _("Can access this app, AA EVE SDE Factory")),
+            ("manage_access", _("Can manage AA EVE SDE Factory")),
         )
         default_permissions = ()  # Remove standard permissions

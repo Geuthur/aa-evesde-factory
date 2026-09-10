@@ -16,7 +16,7 @@ class ExampleMenuItem(MenuItemHook):
 
     def __init__(self):
         super().__init__(
-            f"{app_settings.EXAMPLE_APP_NAME}",
+            f"{app_settings.EVESDE_FACTORY_APP_NAME}",
             "fas fa-book fa-fw",
             "evesde_factory:index",
             navactive=["evesde_factory:"],

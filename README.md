@@ -128,10 +128,10 @@ With the Following IDs you can set up the permissions for the Example
 
 The Following Settings can be setting up in the `local.py`
 
-- EXAMPLE_APP_NAME: `"YOURNAME"` - Set the name of the APP
-- EXAMPLE_TASKS_TIME_LIMIT: `7200` - Defines the time (in seconds) a task will timeout
+- EVESDE_FACTORY_APP_NAME: `"YOURNAME"` - Set the name of the APP
+- EVESDE_FACTORY_TASKS_TIME_LIMIT: `7200` - Defines the time (in seconds) a task will timeout
 
-If you set up EXAMPLE_LOGGER_USE to `True` you need to add the following code below:
+If you set up EVESDE_FACTORY_LOGGER_USE to `True` you need to add the following code below:
 
 ## Translations<a name="translations"></a>
 

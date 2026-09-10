@@ -21,6 +21,6 @@ logger = AppLogger(get_extension_logger(__name__), __title__)
 def index(request: WSGIRequest):
     """Index View"""
     context = {
-        "title": "Example",
+        "title": __title__,
     }
     return render(request, "evesde_factory/view-index.html", context=context)

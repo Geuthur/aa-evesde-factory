@@ -2,11 +2,11 @@
 {% load i18n %}
 
 {% block page_title %}
-    {% block page_template_title %}{% endblock page_template_title %} ⋗ {% translate "Example" %}
+    {% block page_template_title %}{% endblock page_template_title %} ⋗ {% translate "AA EVE SDE Factory" %}
 {% endblock %}
 
 {% block header_nav_brand %}
-    <a class="nav-link text-white link-light link-underline link-underline-opacity-0" href="{% url 'evesde_factory:index' %}">{% translate "Example" %}</a>
+    <a class="nav-link text-white link-light link-underline link-underline-opacity-0" href="{% url 'evesde_factory:index' %}">{% translate "AA EVE SDE Factory" %}</a>
 {% endblock header_nav_brand %}
 
 {% block header_nav_collapse_left %}
@@ -19,11 +19,11 @@
 
 {% block content %}
     <div class="aa-evesde-factory">
-        <!--- Example Header --->
+        <!--- AA EVE SDE Factory Header --->
         <div class="aa-evesde-factory-header">
             {% block aaexample_header %}{% endblock %}
         </div>
-        <!--- Example Body --->
+        <!--- AA EVE SDE Factory Body --->
         <div class="aa-evesde-factory-body">
             {% get_datatables_language_static LANGUAGE_CODE as DT_LANG_PATH %}
             <script type="application/javascript">

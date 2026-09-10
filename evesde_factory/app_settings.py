@@ -6,12 +6,14 @@ App Settings
 from django.conf import settings
 
 # Set Naming on Auth Hook
-EXAMPLE_APP_NAME = getattr(settings, "EXAMPLE_APP_NAME", "Example")
+EVESDE_FACTORY_APP_NAME = getattr(
+    settings, "EVESDE_FACTORY_APP_NAME", "AA EVE SDE Factory"
+)
 
 # Task Settings
 # Global timeout for tasks in seconds to reduce task accumulation during outages.
-EXAMPLE_TASKS_TIME_LIMIT = getattr(
-    settings, "EXAMPLE_TASKS_TIME_LIMIT", 1200
+EVESDE_FACTORY_TASKS_TIME_LIMIT = getattr(
+    settings, "EVESDE_FACTORY_TASKS_TIME_LIMIT", 1200
 )  # 20 minutes
 
 # Maximum Number of Objects processed per run of DJANGO Batch Method
@@ -20,4 +22,6 @@ EXAMPLE_TASKS_TIME_LIMIT = getattr(
 # reduce this value (e.g., to 250 or 100).
 # Can be increased for better performance if your MySQL max_allowed_packet setting
 # is configured higher (default is usually 16-64MB).
-EXAMPLE_BULK_BATCH_SIZE = getattr(settings, "EXAMPLE_BULK_BATCH_SIZE", 500)
+EVESDE_FACTORY_BULK_BATCH_SIZE = getattr(
+    settings, "EVESDE_FACTORY_BULK_BATCH_SIZE", 500
+)
