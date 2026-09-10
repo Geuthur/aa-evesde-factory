@@ -28,6 +28,16 @@ Section Order:
 
 <!-- Your changes go here -->
 
+## [0.0.2] - 2026-09-10
+
+### Fixed
+
+- README.md introduction example
+
+### Added
+
+- ItemType Custom Name Test
+
 ## [0.0.1] - 2026-09-10
 
 ### Added
