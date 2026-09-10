@@ -4,7 +4,7 @@ title: "[BUG]: "
 labels: ["bug"]
 projects: ["aa-evesde-factory"]
 assignees:
-  - octocat
+  - geuthur
 body:
   - type: markdown
     attributes:

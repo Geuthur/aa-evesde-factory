@@ -6,7 +6,7 @@ requires = [
 
 [project]
 name = "aa-evesde-factory"
-description = "Here is your description"
+description = "Factory helpers for faster application development with EVE SDE data"
 readme = "README.md"
 license = { file = "LICENSE" }
 authors = [
@@ -35,14 +35,9 @@ dynamic = [
 ]
 dependencies = [
     "allianceauth>=5.2",
-    "django-eveonline-sde",
-    "django-ninja>=1.5,<2",
+    "django-eveonline-sde>=0.2,<1",
 ]
-optional-dependencies.tests-allianceauth-latest = [
-    "coverage",
-    "factory-boy",
-    "pook",
-]
+optional-dependencies.tests-allianceauth-latest = [ "coverage", "factory-boy" ]
 urls.Changelog = "https://github.com/Geuthur/aa-evesde-factory/blob/master/CHANGELOG.md"
 urls.Discord = "https://discord.gg/WrHzA4rnxA"
 urls.Documentation = "https://github.com/Geuthur/aa-evesde-factory/blob/master/README.md"

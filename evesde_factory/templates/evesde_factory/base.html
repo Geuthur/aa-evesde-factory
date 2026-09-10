@@ -2,11 +2,11 @@
 {% load i18n %}
 
 {% block page_title %}
-    {% block page_template_title %}{% endblock page_template_title %} ⋗ {% translate "AA EVE SDE Factory" %}
+    {% block page_template_title %}{% endblock page_template_title %} ⋗ {% translate "Example" %}
 {% endblock %}
 
 {% block header_nav_brand %}
-    <a class="nav-link text-white link-light link-underline link-underline-opacity-0" href="{% url 'evesde_factory:index' %}">{% translate "AA EVE SDE Factory" %}</a>
+    <a class="nav-link text-white link-light link-underline link-underline-opacity-0" href="{% url 'evesde_factory:index' %}">{% translate "Example" %}</a>
 {% endblock header_nav_brand %}
 
 {% block header_nav_collapse_left %}
@@ -21,52 +21,12 @@
     <div class="aa-evesde-factory">
         <!--- AA EVE SDE Factory Header --->
         <div class="aa-evesde-factory-header">
-            {% block aaexample_header %}{% endblock %}
+            {% block aaevesdefactory_header %}{% endblock %}
         </div>
         <!--- AA EVE SDE Factory Body --->
         <div class="aa-evesde-factory-body">
             {% get_datatables_language_static LANGUAGE_CODE as DT_LANG_PATH %}
-            <script type="application/javascript">
-                const aaEvesdeFactoryDefaultSettings = {
-                    // Alliance Auth settings
-                    locale: '{{ LANGUAGE_CODE }}',
-                    csrfToken: '{{ csrf_token }}',
-                    // evesde_factory settings
-                    dataTables: {
-                        paging: true,
-                        language: {url: '{{ DT_LANG_PATH }}'},
-                        layout: {
-                            topStart: 'pageLength',
-                            topEnd: null,
-                            bottomStart: 'info',
-                            bottomEnd: 'paging'
-                        },
-                        ordering: {
-                            indicators: false,
-                            handler: false
-                        },
-                        columnControl: [
-                            {
-                                target: 0,
-                                content: [
-                                    'order',
-                                ]
-                            },
-                            {
-                                target: 1,
-                                content: [
-                                    'search'
-                                ]
-                            }
-                        ]
-                    },
-                    translations: {
-                        internalServerError: "{% translate 'Internal Server Error' %}",
-                    },
-                };
-            </script>
-
-            {% block aaexample_block %}{% endblock %}
+            {% block aaevesdefactory_block %}{% endblock %}
         </div>
     </div>
 {% endblock %}

@@ -9,7 +9,7 @@ from django.core.handlers.wsgi import WSGIRequest
 from django.test import RequestFactory, TestCase
 
 # AA EVE SDE Factory
-from evesde_factory.tests.testdata.evesde_factory import UserMainFactory
+from evesde_factory.allianceauth import UserFactory
 
 
 class SocketAccessError(Exception):
@@ -44,9 +44,9 @@ class NoSocketsTestCase(TestCase):
         raise SocketAccessError("Attempted to access network")
 
 
-class ExampleTestCase(NoSocketsTestCase):
+class EVESDEFactoryTestCase(NoSocketsTestCase):
     """
-    Preloaded Testcase class for Example tests without Network access.
+    Preloaded Testcase class for AA EVE SDE Factory tests without Network access.
 
     Available Request Factory:
         `self.factory`
@@ -54,7 +54,7 @@ class ExampleTestCase(NoSocketsTestCase):
     Example:
         .. code-block:: python
 
-            class TestMyExampleStuff(ExampleTestCase):
+            class TestMyExampleStuff(EVESDEFactoryTestCase):
                 def test_should_do_what_i_need(self):
                     user = self.user
     """
@@ -67,10 +67,10 @@ class ExampleTestCase(NoSocketsTestCase):
         cls.factory = RequestFactory()
 
         # User with Standard Access
-        cls.user = UserMainFactory()
+        cls.user = UserFactory()
 
         # User with Superuser Access
-        cls.superuser = UserMainFactory()
+        cls.superuser = UserFactory()
         cls.superuser.is_superuser = True
         cls.superuser.save()
 

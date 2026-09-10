@@ -31,6 +31,7 @@ disable=
     # handled by black
     format,
 
+
 [DESIGN]
 max-attributes=10
 max-positional-arguments=6

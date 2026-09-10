@@ -23,15 +23,20 @@ from allianceauth.eveonline.models import (
 )
 from allianceauth.tests.auth_utils import AuthUtils
 
+# AA EVE SDE Factory
+from evesde_factory.utils import add_character_to_user
+
 T = TypeVar("T")
 User = get_user_model()
 
 
+# pylint: disable=no-self-argument
 class BaseMetaFactory(Generic[T], factory.base.FactoryMetaClass):
     def __call__(cls, *args, **kwargs) -> T:
         return super().__call__(*args, **kwargs)
 
 
+# pylint: disable=no-self-argument, unused-argument
 class UserFactory(factory.django.DjangoModelFactory, metaclass=BaseMetaFactory[User]):
     """Generate a User object."""
 
@@ -73,6 +78,31 @@ class UserFactory(factory.django.DjangoModelFactory, metaclass=BaseMetaFactory[U
             del obj._perm_cache
         if hasattr(obj, "_user_perm_cache"):
             del obj._user_perm_cache
+
+
+# pylint: disable=no-self-argument
+class UserMainFactory(UserFactory):
+    """Generate a User object with a main character and default permissions for Belt Radar."""
+
+    permissions__ = ["corputils.view_corp_corpstats"]  # Test Permission
+    scopes__ = ["publicData"]
+
+    @factory.post_generation
+    def main_character(obj, create, _, **kwargs):
+        if not create:
+            return
+        if "character" in kwargs:
+            character = kwargs["character"]
+        else:
+            character_name = f"{obj.first_name} {obj.last_name}"
+            character = EveCharacterFactory(character_name=character_name)
+
+        add_character_to_user(
+            user=obj,
+            character=character,
+            is_main=True,
+            scopes=obj._main_character_scopes,
+        )
 
 
 class EveAllianceInfoFactory(
@@ -123,6 +153,7 @@ class EveCorporationInfoFactory(
         return last_id + 1
 
     @factory.post_generation
+    # pylint: disable=access-member-before-definition
     def create_alliance(obj, create, extracted, **kwargs):
         if not create or extracted is False or obj.alliance:
             return
