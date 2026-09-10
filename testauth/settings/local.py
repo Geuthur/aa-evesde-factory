@@ -8,7 +8,7 @@ Test settings
 
 from .base import *
 
-PACKAGE = "example"
+PACKAGE = "evesde_factory"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
@@ -56,6 +56,7 @@ if os.environ.get("USE_MYSQL", True) is True:
 
 # Add any additional apps to this list.
 INSTALLED_APPS += [
+    "allianceauth.corputils",
     "eve_sde",
     PACKAGE,
 ]

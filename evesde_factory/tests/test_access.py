@@ -6,12 +6,12 @@ from http import HTTPStatus
 # Django
 from django.urls import reverse
 
-# AA Example
-from example import views
-from example.tests import ExampleTestCase
+# AA EVE SDE Factory
+from evesde_factory import views
+from evesde_factory.tests import EVESDEFactoryTestCase
 
 
-class TestViews(ExampleTestCase):
+class TestViews(EVESDEFactoryTestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -21,7 +21,7 @@ class TestViews(ExampleTestCase):
     #    Test should render index view.
     #    """
     #    # given
-    #    request = self.factory.get(reverse("example:index"))
+    #    request = self.factory.get(reverse("evesde_factory:index"))
     #    request.user = self.user
     #    # when
     #    response = views.index(request)

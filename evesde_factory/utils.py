@@ -1,5 +1,6 @@
 # Standard Library
 import datetime as dt
+import logging
 import random
 import string
 
@@ -9,8 +10,12 @@ from django.contrib.auth.models import User
 # Alliance Auth
 from allianceauth.authentication.models import CharacterOwnership
 from allianceauth.eveonline.models import EveCharacter
+from allianceauth.services.hooks import get_extension_logger
 from allianceauth.tests.auth_utils import AuthUtils
 from esi.models import Scope, Token
+
+# AA EVE SDE Factory
+from evesde_factory import __title__
 
 
 def dt_eveformat(my_dt: dt.datetime) -> str:
@@ -36,6 +41,7 @@ def random_string(char_count: int) -> str:
     )
 
 
+# pylint: disable=too-many-arguments, too-many-positional-arguments
 def _generate_token(
     character_id: int,
     character_name: str,
@@ -87,7 +93,7 @@ def _generate_token(
     return token
 
 
-def _store_as_Token(token: dict, user: object) -> Token:
+def _store_as_token(token: dict, user: object) -> Token:
     """Stores a generated token dict as Token object for given user
 
     Args:
@@ -130,7 +136,7 @@ def add_new_token(
     Returns:
         Token: The created Token object
     """
-    return _store_as_Token(
+    return _store_as_token(
         _generate_token(
             character_id=character.character_id,
             character_name=character.character_name,
@@ -198,3 +204,42 @@ def add_permission_to_user(
             user = AuthUtils.add_permission_to_user_by_name(permission_name, user)
             return user
     raise ValueError("No permissions provided to add to user.")
+
+
+class AppLogger(logging.LoggerAdapter):
+    """
+    Custom logger adapter that adds a prefix to log messages.
+
+    Taken from the `allianceauth-app-utils` package.
+    Credits to: Erik Kalkoken
+    """
+
+    def __init__(self, my_logger, prefix):
+        """
+        Initializes the AppLogger with a logger and a prefix.
+
+        :param my_logger: Logger instance
+        :type my_logger: logging.Logger
+        :param prefix: Prefix string to add to log messages
+        :type prefix: str
+        """
+
+        super().__init__(my_logger, {})
+
+        self.prefix = prefix
+
+    def process(self, msg, kwargs):
+        """
+        Prepares the log message by adding the prefix.
+
+        :param msg: Original log message
+        :type msg: str
+        :param kwargs: Additional keyword arguments for logging
+        :type kwargs: dict
+        :return: Tuple of modified message and kwargs
+        :rtype: tuple
+        """
+        return f"[{self.prefix}] {msg}", kwargs
+
+
+logger = AppLogger(my_logger=get_extension_logger(__name__), prefix=__title__)

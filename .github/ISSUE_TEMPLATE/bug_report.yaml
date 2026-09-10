@@ -2,9 +2,9 @@ name: Bug Report
 description: File a bug report.
 title: "[BUG]: "
 labels: ["bug"]
-projects: ["aa-example"]
+projects: ["aa-evesde-factory"]
 assignees:
-  - octocat
+  - geuthur
 body:
   - type: markdown
     attributes:
@@ -29,7 +29,7 @@ body:
     id: terms
     attributes:
       label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/geuthur/aa-example/blob/master/CODE_OF_CONDUCT.md).
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/geuthur/aa-evesde-factory/blob/master/CODE_OF_CONDUCT.md).
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true

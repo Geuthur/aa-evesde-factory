@@ -1,0 +1,38 @@
+{% extends 'allianceauth/base-bs5.html' %}
+{% load i18n %}
+
+{% block page_title %}
+    {% block page_template_title %}{% endblock page_template_title %} ⋗ {% translate "Example" %}
+{% endblock %}
+
+{% block header_nav_brand %}
+    <a class="nav-link text-white link-light link-underline link-underline-opacity-0" href="{% url 'evesde_factory:index' %}">{% translate "Example" %}</a>
+{% endblock header_nav_brand %}
+
+{% block header_nav_collapse_left %}
+    {% include 'evesde_factory/partials/navigation/navigation.html' %}
+{% endblock header_nav_collapse_left %}
+
+{% block header_nav_collapse_right %}
+    {% include 'evesde_factory/partials/navigation/administration.html' %}
+{% endblock header_nav_collapse_right %}
+
+{% block content %}
+    <div class="aa-evesde-factory">
+        <!--- AA EVE SDE Factory Header --->
+        <div class="aa-evesde-factory-header">
+            {% block aaevesdefactory_header %}{% endblock %}
+        </div>
+        <!--- AA EVE SDE Factory Body --->
+        <div class="aa-evesde-factory-body">
+            {% get_datatables_language_static LANGUAGE_CODE as DT_LANG_PATH %}
+            {% block aaevesdefactory_block %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_javascript %}
+{% endblock %}
+
+{% block extra_script %}
+{% endblock %}
