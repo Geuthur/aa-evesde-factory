@@ -6,7 +6,7 @@ requires = [
 
 [project]
 name = "aa-evesde-factory"
-description = "Factory helpers for faster application development with EVE SDE data"
+description = "Factory helpers for faster application development with EVE SDE & AllianceAuth data"
 readme = "README.md"
 license = { file = "LICENSE" }
 authors = [

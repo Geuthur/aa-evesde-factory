@@ -28,8 +28,16 @@ Section Order:
 
 <!-- Your changes go here -->
 
+## [0.0.1] - 2026-09-10
+
 ### Added
 
+- AllianceAuth Model Factories
+  - User
+    - Optional with random permission assigmend
+  - EveCharacter
+  - EveCorporation
+  - EveAlliance
 - EVE SDE Model Factories
   - Constellation
   - ItemType
@@ -41,4 +49,5 @@ Section Order:
 
 <!-- Links -->
 
+[0.0.1]: https://github.com/Geuthur/aa-evesde-factory/compare/v...v0.0.1 "v0.0.1"
 [in development]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.1...HEAD "In Development"
