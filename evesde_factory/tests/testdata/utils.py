@@ -196,5 +196,5 @@ def add_permission_to_user(
     if permissions:
         for permission_name in permissions:
             user = AuthUtils.add_permission_to_user_by_name(permission_name, user)
-            return user
+        return user
     raise ValueError("No permissions provided to add to user.")

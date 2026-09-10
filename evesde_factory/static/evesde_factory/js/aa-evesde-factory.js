@@ -1,12 +1,12 @@
-/* global aaExampleDefaultSettings, aaExampleSettingsOverride, objectDeepMerge, bootstrap */
+/* global aaEvesdeFactoryDefaultSettings, aaEvesdeFactorySettingsOverride, objectDeepMerge, bootstrap */
 
 /**
  * Default settings for aa-evesde-factory
- * Settings can be overridden by defining aaExampleSettingsOverride before this script is loaded.
+ * Settings can be overridden by defining aaEvesdeFactorySettingsOverride before this script is loaded.
  */
-const aaExampleSettings = (typeof aaExampleSettingsOverride !== 'undefined')
-    ? objectDeepMerge(aaExampleDefaultSettings, aaExampleSettingsOverride) // jshint ignore:line
-    : aaExampleDefaultSettings;
+const aaEvesdeFactorySettings = (typeof aaEvesdeFactorySettingsOverride !== 'undefined')
+    ? objectDeepMerge(aaEvesdeFactoryDefaultSettings, aaEvesdeFactorySettingsOverride) // jshint ignore:line
+    : aaEvesdeFactoryDefaultSettings;
 
 /**
 * Local fetch adapter: keeps global fetch helpers untouched while improving error details.

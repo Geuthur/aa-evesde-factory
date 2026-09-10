@@ -45,3 +45,4 @@ class TestViews(ExampleTestCase):
         response = views.index(request)
         # then
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
+        self.assertIn("next=", response.url)
