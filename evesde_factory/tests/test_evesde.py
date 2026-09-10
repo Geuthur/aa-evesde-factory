@@ -20,6 +20,13 @@ class TestEveSdeFactory(EVESDEFactoryTestCase):
         item_type = ItemTypeFactory()
         self.assertIsNotNone(item_type.id)
 
+    def test_can_create_item_type_custom_name(self):
+        """Test that an item type can be created with a custom name."""
+        custom_name = "Custom Item Type"
+        item_type = ItemTypeFactory(name=custom_name)
+        self.assertIsNotNone(item_type.id)
+        self.assertEqual(item_type.name, custom_name)
+
     def test_can_create_item_group(self):
         """Test that an item group can be created."""
         item_group = ItemGroupFactory()
