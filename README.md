@@ -49,13 +49,13 @@ class TestEveSdeFactory(EVESDEFactoryTestCase):
     """Test the factories."""
 
 
-def test_can_create_app_user_with_custom_permissions():
+def test_can_create_app_user_with_custom_permissions(self):
     """Create a user with a custom permission for testing."""
     user = UserMainFactory(permissions__=["yourapp.basic_access"])
     self.assertTrue(user.has_perm("yourapp.basic_access"))
 
 
-def test_create_itemtype():
+def test_create_itemtype(self):
     """Create a basic EVE SDE item type for testing."""
     custom_name = "Custom Item Type"
     item_type = ItemTypeFactory(name=custom_name)
