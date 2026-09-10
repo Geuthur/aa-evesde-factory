@@ -21,7 +21,7 @@ logger = AppLogger(get_extension_logger(__name__), __title__)
 
 
 class CharacterApiEndpoints:
-    tags = ["Example"]
+    tags = [__title__]
 
     def __init__(self, api: NinjaAPI):
         @api.get(
@@ -32,31 +32,33 @@ class CharacterApiEndpoints:
             },
             tags=self.tags,
         )
-        def get_example(request):
+        def get_evesde_factory(request):
             """
-            Get Example Data
+            Get AA EVE SDE Factory Data
 
             This endpoint retrieves evesde_factory data for the authenticated user.
 
             Returns:
-                200: Example data retrieved successfully.
+                200: AA EVE SDE Factory data retrieved successfully.
                 403: Permission Denied.
             """
             user = request.user
             if not user.is_superuser:
                 return HTTPStatus.FORBIDDEN, {"error": _("Permission Denied.")}
 
-            # Example data - replace this with your actual logic
+            # AA EVE SDE Factory data - replace this with your actual logic
             example_data = [
                 schema.ExampleSchema(
-                    id=1,
-                    name="Example 1",
-                    description="This is an evesde_factory.",
+                    character_id=1,
+                    character_name="AA EVE SDE Factory Character 1",
+                    corporation_id=1001,
+                    corporation_name="AA EVE SDE Factory Corporation 1",
                 ),
                 schema.ExampleSchema(
-                    id=2,
-                    name="Example 2",
-                    description="This is another evesde_factory.",
+                    character_id=2,
+                    character_name="AA EVE SDE Factory Character 2",
+                    corporation_id=1002,
+                    corporation_name="AA EVE SDE Factory Corporation 2",
                 ),
             ]
 

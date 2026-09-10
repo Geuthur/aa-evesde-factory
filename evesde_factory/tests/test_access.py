@@ -35,6 +35,10 @@ class TestViews(ExampleTestCase):
         """
         # given
         self.user.user_permissions.clear()
+        self.user.refresh_from_db()
+        for attr in ("_perm_cache", "_user_perm_cache", "_group_perm_cache"):
+            if hasattr(self.user, attr):
+                delattr(self.user, attr)
         request = self.factory.get(reverse("evesde_factory:index"))
         request.user = self.user
         # when
