@@ -60,4 +60,5 @@ Section Order:
 <!-- Links -->
 
 [0.0.1]: https://github.com/Geuthur/aa-evesde-factory/compare/v...v0.0.1 "v0.0.1"
-[in development]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.1...HEAD "In Development"
+[0.0.2]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.1...v0.0.2 "v0.0.2"
+[in development]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.2...HEAD "In Development"
