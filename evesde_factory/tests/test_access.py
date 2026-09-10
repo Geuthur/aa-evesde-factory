@@ -28,3 +28,16 @@ class TestViews(ExampleTestCase):
         # then
         self.assertEqual(response.status_code, HTTPStatus.OK)
         self.assertContains(response, __title__)
+
+    def test_index_denies_user_without_permission(self):
+        """
+        Test should deny access to user without the app permission.
+        """
+        # given
+        self.user.user_permissions.clear()
+        request = self.factory.get(reverse("evesde_factory:index"))
+        request.user = self.user
+        # when
+        response = views.index(request)
+        # then
+        self.assertEqual(response.status_code, HTTPStatus.FOUND)
