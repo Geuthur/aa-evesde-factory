@@ -28,6 +28,10 @@ Section Order:
 
 <!-- Your changes go here -->
 
+### Changed
+
+- `__operations__` now lists the public `GetStatus` operation instead of an empty list, which makes `esi.client` raise an `AttributeError` with `DEBUG=False`
+
 ### Fixed
 
 - Fixed `make coverage` exiting with 0 when tests failed. The reports are still created, and the target now exits with the status of the test run, or with the status of `coverage report` if the tests passed.
