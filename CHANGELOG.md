@@ -34,6 +34,7 @@ Section Order:
 
 ### Fixed
 
+- `UserFactory` now appends a running number to the generated `username`. Before, a random name could match an existing user (e.g. the superuser of `AuthTestCase`) through `django_get_or_create`, which made permission tests fail randomly. Explicitly passed usernames still use `get_or_create`.
 - Fixed `make coverage` exiting with 0 when tests failed. The reports are still created, and the target now exits with the status of the test run, or with the status of `coverage report` if the tests passed.
 
 ## [0.0.2] - 2026-09-10
