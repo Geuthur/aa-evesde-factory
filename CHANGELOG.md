@@ -28,15 +28,17 @@ Section Order:
 
 <!-- Your changes go here -->
 
-### Changed
-
-- `__operations__` now lists the public `GetStatus` operation instead of an empty list, which makes `esi.client` raise an `AttributeError` with `DEBUG=False`
+## [0.0.3] - 2026-11-05
 
 ### Fixed
 
 - `add_permission_to_user` now grants all given permissions. Before, the `return` sat inside the loop, so only the first permission was added.
 - `UserFactory` now appends a running number to the generated `username`. Before, a random name could match an existing user (e.g. the superuser of `AuthTestCase`) through `django_get_or_create`, which made permission tests fail randomly. Explicitly passed usernames still use `get_or_create`.
 - Fixed `make coverage` exiting with 0 when tests failed. The reports are still created, and the target now exits with the status of the test run, or with the status of `coverage report` if the tests passed.
+
+### Changed
+
+- `__operations__` now lists the public `GetStatus` operation instead of an empty list, which makes `esi.client` raise an `AttributeError` with `DEBUG=False`
 
 ## [0.0.2] - 2026-09-10
 
@@ -71,4 +73,5 @@ Section Order:
 
 [0.0.1]: https://github.com/Geuthur/aa-evesde-factory/compare/v...v0.0.1 "v0.0.1"
 [0.0.2]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.1...v0.0.2 "v0.0.2"
-[in development]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.2...HEAD "In Development"
+[0.0.3]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.2...v0.0.3 "v0.0.3"
+[in development]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.3...HEAD "In Development"
