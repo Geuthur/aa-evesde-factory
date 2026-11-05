@@ -46,7 +46,11 @@ class UserFactory(factory.django.DjangoModelFactory, metaclass=BaseMetaFactory[U
         exclude = ("_generated_name",)
 
     _generated_name = factory.Faker("name")
-    username = factory.LazyAttribute(lambda obj: obj._generated_name.replace(" ", "_"))
+    # The sequence number keeps generated names unique, so a random name can
+    # never match an existing user (e.g. the superuser of a test class).
+    username = factory.LazyAttributeSequence(
+        lambda obj, n: f"{obj._generated_name.replace(' ', '_')}_{n}"
+    )
     first_name = factory.LazyAttribute(lambda obj: obj._generated_name.split(" ")[0])
     last_name = factory.LazyAttribute(lambda obj: obj._generated_name.split(" ")[1])
     email = factory.LazyAttribute(
