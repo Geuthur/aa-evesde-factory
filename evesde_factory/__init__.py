@@ -1,6 +1,6 @@
 """Initialize the app"""
 
-__version__ = "0.0.3"
+__version__ = "0.1.0"
 __title__ = "AA EVE SDE Factory"
 
 __package_name__ = "aa-evesde-factory"
