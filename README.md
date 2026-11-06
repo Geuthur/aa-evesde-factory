@@ -42,9 +42,10 @@ These factories help you quickly create realistic AllianceAuth and EVE SDE objec
 ```python
 from evesde_factory.allianceauth import UserMainFactory
 from evesde_factory.eve_sde import ItemTypeFactory
+from yourapp.tests import AuthTestCase
 
 
-class TestEveSdeFactory(EVESDEFactoryTestCase):
+class TestEveSdeFactory(AuthTestCase):
     """Test the factories."""
 
     def test_can_create_app_user_with_custom_permissions(self):

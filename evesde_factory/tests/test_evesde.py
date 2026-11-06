@@ -59,13 +59,13 @@ from evesde_factory.eve_sde import (
     TypeListGroupFactory,
     TypeListTypeFactory,
 )
-from evesde_factory.tests import EVESDEFactoryTestCase
+from evesde_factory.tests import AuthTestCase
 
 # Import bookkeeping of django-eveonline-sde, not SDE data
 MODELS_WITHOUT_FACTORY = {"EveSDE", "EveSDESection"}
 
 
-class TestEveSdeFactory(EVESDEFactoryTestCase):
+class TestEveSdeFactory(AuthTestCase):
     """Test the factories."""
 
     def test_can_create_item_type(self):

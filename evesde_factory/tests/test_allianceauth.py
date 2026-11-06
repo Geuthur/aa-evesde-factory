@@ -11,10 +11,10 @@ from evesde_factory.allianceauth import (
     UserFactory,
     UserMainFactory,
 )
-from evesde_factory.tests import EVESDEFactoryTestCase
+from evesde_factory.tests import AuthTestCase
 
 
-class TestAllianceAuthFactory(EVESDEFactoryTestCase):
+class TestAllianceAuthFactory(AuthTestCase):
     """Test the factories."""
 
     def test_can_create_user(self):

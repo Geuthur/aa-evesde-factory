@@ -36,6 +36,7 @@ Section Order:
 ### Changed
 
 - Require `django-eveonline-sde>=1,<2` (see its README for the `modeltranslation` setup); the test settings add `modeltranslation` accordingly
+- Tests use the shared `AuthTestCase` base class (as in `aa-example`) instead of `EVESDEFactoryTestCase`
 
 ### Fixed
 

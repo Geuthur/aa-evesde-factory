@@ -9,7 +9,7 @@ from django.core.handlers.wsgi import WSGIRequest
 from django.test import RequestFactory, TestCase
 
 # AA EVE SDE Factory
-from evesde_factory.allianceauth import UserFactory
+from evesde_factory.allianceauth import UserMainFactory
 
 
 class SocketAccessError(Exception):
@@ -17,16 +17,7 @@ class SocketAccessError(Exception):
 
 
 class NoSocketsTestCase(TestCase):
-    """Variation of Django's TestCase class that prevents any network use.
-
-    Example:
-
-        .. code-block:: python
-
-            class TestMyStuff(BaseTestCase):
-                def test_should_do_what_i_need(self): ...
-
-    """
+    """Variation of Django's TestCase class that prevents any network use."""
 
     @classmethod
     def setUpClass(cls):
@@ -44,19 +35,17 @@ class NoSocketsTestCase(TestCase):
         raise SocketAccessError("Attempted to access network")
 
 
-class EVESDEFactoryTestCase(NoSocketsTestCase):
+class AuthTestCase(NoSocketsTestCase):
     """
-    Preloaded Testcase class for AA EVE SDE Factory tests without Network access.
+    Preloaded Testcase class for AllianceAuth tests without Network access.
 
     Available Request Factory:
         `self.factory`
-
-    Example:
-        .. code-block:: python
-
-            class TestMyExampleStuff(EVESDEFactoryTestCase):
-                def test_should_do_what_i_need(self):
-                    user = self.user
+    Available Django Users:
+        `self.user`
+        `self.superuser`
+    Available methods:
+        `_middleware_process_request(request)`
     """
 
     @classmethod
@@ -67,10 +56,10 @@ class EVESDEFactoryTestCase(NoSocketsTestCase):
         cls.factory = RequestFactory()
 
         # User with Standard Access
-        cls.user = UserFactory()
+        cls.user = UserMainFactory()
 
         # User with Superuser Access
-        cls.superuser = UserFactory()
+        cls.superuser = UserMainFactory()
         cls.superuser.is_superuser = True
         cls.superuser.save()
 
