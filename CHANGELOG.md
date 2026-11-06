@@ -35,7 +35,7 @@ Section Order:
 
 ### Changed
 
-- Require `django-eveonline-sde>=1,<2`; projects now need `modeltranslation` first in `INSTALLED_APPS` (see the `django-eveonline-sde` README)
+- Require `django-eveonline-sde>=1,<2` (see its README for the `modeltranslation` setup); the test settings add `modeltranslation` accordingly
 
 ### Fixed
 

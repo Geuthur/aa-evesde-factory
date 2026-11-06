@@ -346,3 +346,20 @@ class TestEveSdeFactory(EVESDEFactoryTestCase):
             and model.__name__ not in MODELS_WITHOUT_FACTORY
         )
         self.assertEqual(missing, [])
+
+    def test_can_create_moon_without_planet(self):
+        """Test that a moon can be created without a planet."""
+        moon = MoonFactory(planet=None)
+        self.assertIsNone(moon.planet)
+        self.assertIsNone(moon.solar_system)
+
+    def test_can_create_all_levels_for_shared_parents(self):
+        """Test that levels do not collide when parents are shared."""
+        item_type = ItemTypeFactory()
+        certificate = CertificateFactory()
+        skill_plan = SkillPlanFactory()
+        MasteryFactory.create_batch(5, item_type=item_type, certificate=certificate)
+        SkillPlanSkillRequirementFactory.create_batch(
+            5, skill_plan=skill_plan, item_type=item_type
+        )
+        self.assertEqual(certificate.masteries.count(), 5)

@@ -460,7 +460,7 @@ class MasteryFactory(
         model = Mastery
 
     item_type = factory.SubFactory(ItemTypeFactory)
-    level = factory.fuzzy.FuzzyInteger(0, 4)
+    level = factory.Sequence(lambda n: n % 5)
     certificate = factory.SubFactory(CertificateFactory)
 
 
@@ -595,7 +595,9 @@ class MoonFactory(factory.django.DjangoModelFactory, metaclass=BaseMetaFactory[M
     orbit_index = factory.fuzzy.FuzzyInteger(1, 100)
     planet = factory.SubFactory(PlanetFactory)
     radius = factory.fuzzy.FuzzyInteger(1, 100000)
-    solar_system = factory.SelfAttribute("planet.solar_system")
+    solar_system = factory.LazyAttribute(
+        lambda o: o.planet.solar_system if o.planet else None
+    )
 
 
 class LandmarkFactory(
@@ -828,7 +830,7 @@ class SkillPlanSkillRequirementFactory(
 
     skill_plan = factory.SubFactory(SkillPlanFactory)
     item_type = factory.SubFactory(ItemTypeFactory)
-    level = factory.fuzzy.FuzzyInteger(1, 5)
+    level = factory.Sequence(lambda n: n % 5 + 1)
 
 
 class SovereigntyUpgradeFactory(
