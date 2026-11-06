@@ -22,18 +22,17 @@ ______________________________________________________________________
   - EveCharacter
   - EveCorporation
   - EveAlliance
-- EVE SDE Model Data Generation
-  - Constellation
-  - ItemType
-  - ItemGroup
-  - ItemCategory
-  - Planet
-  - Region
-  - SolarSystem
+- EVE SDE Model Data Generation (all data models of `django-eveonline-sde` 1.0.0)
+  - Map: Region, Constellation, SolarSystem, Star, StarResource, Stargate, Planet, PlanetResource, Moon, NPCStation, Landmark
+  - Types: ItemCategory, ItemGroup, ItemMarketGroup, ItemType, ItemTypeMaterials, TypeList with types, groups and categories
+  - Dogma: DogmaAttributeCategory, DogmaUnit, DogmaAttribute, DogmaEffect, TypeDogma, TypeEffect
+  - Certificates: Certificate, CertificateSkill, CertificateRecommendedType, Mastery
+  - Industry: BlueprintActivity with products and materials
+  - Freelance: FreelanceJobSchema with parameters
+  - Misc: Archetype, AccountingEntryType, NotificationType, CorporationRole, CorporationRoleGroup with memberships, MetenoxMoonDrill, SkillPlan with milestones and skill requirements, SovereigntyUpgrade
 
 ## Upcoming<a name="upcoming"></a>
 
-- Remaining EVE SDE Models
 - Other Utility Tools
 
 ## Introducing<a name="introducing"></a>

@@ -28,6 +28,19 @@ Section Order:
 
 <!-- Your changes go here -->
 
+### Added
+
+- Factories for all data models of `django-eveonline-sde` 1.0.0 (map, types, dogma, certificates, industry, freelance, misc and sovereignty models)
+- Test that fails when a `django-eveonline-sde` model has no factory
+
+### Changed
+
+- Require `django-eveonline-sde>=1,<2`; projects now need `modeltranslation` first in `INSTALLED_APPS` (see the `django-eveonline-sde` README)
+
+### Fixed
+
+- `ItemTypeFactory.mass` generates a float instead of a `Decimal`, `PlanetFactory.radius` an integer instead of a float, matching the model fields
+
 ## [0.0.3] - 2026-11-05
 
 ### Fixed
