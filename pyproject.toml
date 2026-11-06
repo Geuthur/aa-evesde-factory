@@ -35,7 +35,7 @@ dynamic = [
 ]
 dependencies = [
     "allianceauth>=5.2",
-    "django-eveonline-sde>=0.2,<1",
+    "django-eveonline-sde>=1,<2",
 ]
 optional-dependencies.tests-allianceauth-latest = [ "coverage", "factory-boy" ]
 urls.Changelog = "https://github.com/Geuthur/aa-evesde-factory/blob/master/CHANGELOG.md"

@@ -60,6 +60,8 @@ INSTALLED_APPS += [
     "eve_sde",
     PACKAGE,
 ]
+
+INSTALLED_APPS = ["modeltranslation"] + INSTALLED_APPS
 # By default, apps are prevented from having public views for security reasons.
 # If you want to allow specific apps to have public views,
 # you can put their names here (same name as in INSTALLED_APPS).

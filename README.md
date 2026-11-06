@@ -22,18 +22,17 @@ ______________________________________________________________________
   - EveCharacter
   - EveCorporation
   - EveAlliance
-- EVE SDE Model Data Generation
-  - Constellation
-  - ItemType
-  - ItemGroup
-  - ItemCategory
-  - Planet
-  - Region
-  - SolarSystem
+- EVE SDE Model Data Generation (all data models of `django-eveonline-sde` 1.0.0)
+  - Map: Region, Constellation, SolarSystem, Star, StarResource, Stargate, Planet, PlanetResource, Moon, NPCStation, Landmark
+  - Types: ItemCategory, ItemGroup, ItemMarketGroup, ItemType, ItemTypeMaterials, TypeList with types, groups and categories
+  - Dogma: DogmaAttributeCategory, DogmaUnit, DogmaAttribute, DogmaEffect, TypeDogma, TypeEffect
+  - Certificates: Certificate, CertificateSkill, CertificateRecommendedType, Mastery
+  - Industry: BlueprintActivity with products and materials
+  - Freelance: FreelanceJobSchema with parameters
+  - Misc: Archetype, AccountingEntryType, NotificationType, CorporationRole, CorporationRoleGroup with memberships, MetenoxMoonDrill, SkillPlan with milestones and skill requirements, SovereigntyUpgrade
 
 ## Upcoming<a name="upcoming"></a>
 
-- Remaining EVE SDE Models
 - Other Utility Tools
 
 ## Introducing<a name="introducing"></a>
@@ -43,9 +42,10 @@ These factories help you quickly create realistic AllianceAuth and EVE SDE objec
 ```python
 from evesde_factory.allianceauth import UserMainFactory
 from evesde_factory.eve_sde import ItemTypeFactory
+from yourapp.tests import AuthTestCase
 
 
-class TestEveSdeFactory(EVESDEFactoryTestCase):
+class TestEveSdeFactory(AuthTestCase):
     """Test the factories."""
 
     def test_can_create_app_user_with_custom_permissions(self):
