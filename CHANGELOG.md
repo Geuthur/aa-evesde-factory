@@ -28,19 +28,21 @@ Section Order:
 
 <!-- Your changes go here -->
 
+## [0.1.0] - 2026-11-06
+
 ### Added
 
 - Factories for all data models of `django-eveonline-sde` 1.0.0 (map, types, dogma, certificates, industry, freelance, misc and sovereignty models)
 - Test that fails when a `django-eveonline-sde` model has no factory
 
+### Fixed
+
+- `ItemTypeFactory.mass` generates a float instead of a `Decimal`, `PlanetFactory.radius` an integer instead of a float, matching the model fields
+
 ### Changed
 
 - Require `django-eveonline-sde>=1,<2` (see its README for the `modeltranslation` setup); the test settings add `modeltranslation` accordingly
 - Tests use the shared `AuthTestCase` base class (as in `aa-example`) instead of `EVESDEFactoryTestCase`
-
-### Fixed
-
-- `ItemTypeFactory.mass` generates a float instead of a `Decimal`, `PlanetFactory.radius` an integer instead of a float, matching the model fields
 
 ## [0.0.3] - 2026-11-05
 
@@ -88,4 +90,5 @@ Section Order:
 [0.0.1]: https://github.com/Geuthur/aa-evesde-factory/compare/v...v0.0.1 "v0.0.1"
 [0.0.2]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.1...v0.0.2 "v0.0.2"
 [0.0.3]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.2...v0.0.3 "v0.0.3"
-[in development]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.3...HEAD "In Development"
+[0.1.0]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.3...v0.1.0 "v0.1.0"
+[in development]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.1.0...HEAD "In Development"
