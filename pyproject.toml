@@ -37,6 +37,11 @@ dependencies = [
     "allianceauth>=5.2",
     "django-eveonline-sde>=1,<2",
 ]
+optional-dependencies.tests-allianceauth-development = [
+    "allianceauth>=6.0.0a1,<7",
+    "coverage",
+    "factory-boy",
+]
 optional-dependencies.tests-allianceauth-latest = [ "coverage", "factory-boy" ]
 urls.Changelog = "https://github.com/Geuthur/aa-evesde-factory/blob/master/CHANGELOG.md"
 urls.Discord = "https://discord.gg/WrHzA4rnxA"
