@@ -28,6 +28,8 @@ Section Order:
 
 <!-- Your changes go here -->
 
+## [0.2.0] - 2026-11-10
+
 ### Added
 
 - Public module `evesde_factory.testcase` with `SocketAccessError`, `NoSocketsTestCase` and `AuthTestCase`. Apps import it instead of copying it; `AuthTestCase` builds `user` and `superuser` from the class attribute `factory_class` (default `UserFactory`).
@@ -96,4 +98,5 @@ Section Order:
 [0.0.2]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.1...v0.0.2 "v0.0.2"
 [0.0.3]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.2...v0.0.3 "v0.0.3"
 [0.1.0]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.3...v0.1.0 "v0.1.0"
-[in development]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.1.0...HEAD "In Development"
+[0.2.0]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.1.0...v0.2.0 "v0.2.0"
+[in development]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.2.0...HEAD "In Development"
