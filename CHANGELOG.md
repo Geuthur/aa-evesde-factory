@@ -30,6 +30,7 @@ Section Order:
 
 ### Added
 
+- Public module `evesde_factory.testcase` with `SocketAccessError`, `NoSocketsTestCase` and `AuthTestCase`. Apps import it instead of copying it; `AuthTestCase` builds `user` and `superuser` from the class attribute `factory_class` (default `UserFactory`).
 - Optional extra `tests-allianceauth-development` (test packages plus the Alliance Auth 6 pre-release) for the tox environment `allianceauth-development` and `make tox-tests-development`; a non-blocking CI job "AA Development" runs it on Python 3.13 and 3.14
 
 ## [0.1.0] - 2026-11-06
