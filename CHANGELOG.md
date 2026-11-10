@@ -28,7 +28,14 @@ Section Order:
 
 <!-- Your changes go here -->
 
+### Removed
+
+- Public test case module `evesde_factory.testcase` (added in 0.2.0, withdrawn); the package content equals 0.1.0
+
 ## [0.2.0] - 2026-11-10
+
+> [!WARNING]
+> Withdrawn: `evesde_factory.testcase` was removed again, use 0.2.1.
 
 ### Added
 
