@@ -35,7 +35,7 @@ Section Order:
 ## [0.2.0] - 2026-11-10
 
 > [!WARNING]
-> Withdrawn: `evesde_factory.testcase` was removed again, use 0.2.1.
+> Withdrawn and yanked on PyPI: `evesde_factory.testcase` was removed again, use 0.2.1.
 
 ### Added
 
