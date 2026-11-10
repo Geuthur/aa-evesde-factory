@@ -10,7 +10,6 @@ ______________________________________________________________________
   - [Features](#features)
   - [Upcoming](#upcoming)
   - [Introducing](#introducing)
-  - [Test case base](#test-case-base)
   - [Contributing](#contributing)
 
 <!-- mdformat-toc end -->
@@ -23,7 +22,6 @@ ______________________________________________________________________
   - EveCharacter
   - EveCorporation
   - EveAlliance
-- Test case base (`NoSocketsTestCase`, `AuthTestCase`) in `evesde_factory.testcase`
 - EVE SDE Model Data Generation (all data models of `django-eveonline-sde` 1.0.0)
   - Map: Region, Constellation, SolarSystem, Star, StarResource, Stargate, Planet, PlanetResource, Moon, NPCStation, Landmark
   - Types: ItemCategory, ItemGroup, ItemMarketGroup, ItemType, ItemTypeMaterials, TypeList with types, groups and categories
@@ -60,21 +58,6 @@ class TestEveSdeFactory(AuthTestCase):
         custom_name = "Custom Item Type"
         item_type = ItemTypeFactory(name=custom_name)
         self.assertEqual(item_type.name, custom_name)
-```
-
-## Test case base<a name="test-case-base"></a>
-
-`evesde_factory.testcase` provides the shared test case classes `SocketAccessError`, `NoSocketsTestCase` and `AuthTestCase`.
-`AuthTestCase` blocks network access and offers `self.factory` (`RequestFactory`), `self.user`, `self.superuser` and `_middleware_process_request(request)`.
-The users are built by the class attribute `factory_class` (default: `evesde_factory.allianceauth.UserFactory`). An app sets its own factory in `<app>/tests/__init__.py`:
-
-```python
-from evesde_factory.testcase import AuthTestCase as BaseAuthTestCase
-from myapp.tests.testdata.app import UserMainFactory
-
-
-class AuthTestCase(BaseAuthTestCase):
-    factory_class = UserMainFactory
 ```
 
 ## Contributing<a name="contributing"></a>
