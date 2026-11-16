@@ -28,6 +28,10 @@ Section Order:
 
 <!-- Your changes go here -->
 
+### Changed
+
+- Dev dependency `eslint` raised to `^10.15.0`, which pulls in `minimatch` 11 (fixes the Dependabot alert for `minimatch`)
+
 ## [0.2.1] - 2026-11-10
 
 ### Removed
