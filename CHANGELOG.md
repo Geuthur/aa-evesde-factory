@@ -32,6 +32,7 @@ Section Order:
 
 - Dev dependency `eslint` raised to `^10.15.0`, which pulls in `minimatch` 11 (fixes the Dependabot alert for `minimatch`)
 - Node raised to 26 (CI and pre-commit) and the npm dev dependencies updated (`globals` 17.14)
+- `stylelint` 18 and `stylelint-config-standard` 41; the pre-commit hook passes its own `node_modules` as `--config-basedir`, because stylelint 18 no longer loads `extends` from global modules
 
 ## [0.2.1] - 2026-11-10
 
