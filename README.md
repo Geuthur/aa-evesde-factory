@@ -22,7 +22,7 @@ ______________________________________________________________________
   - EveCharacter
   - EveCorporation
   - EveAlliance
-- EVE SDE Model Data Generation (all data models of `django-eveonline-sde` 1.0.0)
+- EVE SDE Model Data Generation (all data models of `django-eveonline-sde` 1.0.0 and 2.0.0)
   - Map: Region, Constellation, SolarSystem, Star, StarResource, Stargate, Planet, PlanetResource, Moon, NPCStation, Landmark
   - Types: ItemCategory, ItemGroup, ItemMarketGroup, ItemType, ItemTypeMaterials, TypeList with types, groups and categories
   - Dogma: DogmaAttributeCategory, DogmaUnit, DogmaAttribute, DogmaEffect, TypeDogma, TypeEffect
