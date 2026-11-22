@@ -31,6 +31,7 @@ Section Order:
 ### Changed
 
 - Dev dependency `eslint` raised to `^10.15.0`, which pulls in `minimatch` 11 (fixes the Dependabot alert for `minimatch`)
+- Node raised to 26 (CI and pre-commit) and the npm dev dependencies updated (`globals` 17.14)
 
 ## [0.2.1] - 2026-11-10
 
