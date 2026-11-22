@@ -28,12 +28,14 @@ Section Order:
 
 <!-- Your changes go here -->
 
+## [0.3.0] - 2026-11-22
+
 ### Changed
 
+- Allow `django-eveonline-sde` 2 (`>=1,<3`); its data models are unchanged from 1.0.0, so the factories need no change
 - Dev dependency `eslint` raised to `^10.15.0`, which pulls in `minimatch` 11 (fixes the Dependabot alert for `minimatch`)
 - Node raised to 26 (CI and pre-commit) and the npm dev dependencies updated (`globals` 17.14)
 - `stylelint` 18 and `stylelint-config-standard` 41; the pre-commit hook passes its own `node_modules` as `--config-basedir`, because stylelint 18 no longer loads `extends` from global modules
-- Allow `django-eveonline-sde` 2 (`>=1,<3`); its data models are unchanged from 1.0.0, so the factories need no change
 
 ## [0.2.1] - 2026-11-10
 
@@ -116,4 +118,5 @@ Section Order:
 [0.1.0]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.0.3...v0.1.0 "v0.1.0"
 [0.2.0]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.1.0...v0.2.0 "v0.2.0"
 [0.2.1]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.2.0...v0.2.1 "v0.2.1"
-[in development]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.2.1...HEAD "In Development"
+[0.3.0]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.2.1...v0.3.0 "v0.3.0"
+[in development]: https://github.com/Geuthur/aa-evesde-factory/compare/v0.3.0...HEAD "In Development"
